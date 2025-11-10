@@ -6,8 +6,6 @@ Application iOS en Swift/SwiftUI qui affiche la liste des pays du monde en utili
 
 ![App Demo](demo/demo.gif)
 
-[▶️ Watch full video](https://github.com/divindudu/countries/demo/demo.mp4)
-
 ## 📱 Fonctionnalités
 
 - ✅ Affichage de la liste de tous les pays avec nom et drapeau
