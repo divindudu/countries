@@ -2,6 +2,8 @@
 
 Application iOS en Swift/SwiftUI qui affiche la liste des pays du monde en utilisant l'API [REST Countries](https://restcountries.com/).
 
+
+
 ## 📱 Fonctionnalités
 
 - ✅ Affichage de la liste de tous les pays avec nom et drapeau
