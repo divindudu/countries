@@ -12,6 +12,7 @@ import Foundation
 struct CountryListView: View {
 
     @State var viewModel: CountryListViewModel
+    @Namespace private var transitionNamespace
 
     var body: some View {
         NavigationStack {
@@ -36,9 +37,9 @@ struct CountryListView: View {
                 case .success(let countries):
                     List(countries) { country in
                         NavigationLink {
-                            CountryDetailView(country: country)
+                            CountryDetailView(country: country, transitionNamespace: transitionNamespace)
                         } label: {
-                            CountryRowView(country: country)
+                            CountryRowView(country: country, transitionNamespace: transitionNamespace)
                         }
                     }
                     .listStyle(.plain)

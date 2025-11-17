@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CountryRowView: View {
     let country: Country
+    let transitionNamespace: Namespace.ID
 
     var body: some View {
         HStack(spacing: 16) {
@@ -24,6 +25,7 @@ struct CountryRowView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 60, height: 40)
                         .clipShape(RoundedRectangle(cornerRadius: 4))
+                        .matchedTransitionSource(id: country.id, in: transitionNamespace)
                 case .failure:
                     Image(systemName: "photo")
                         .frame(width: 60, height: 40)
@@ -45,9 +47,10 @@ struct CountryRowView: View {
 }
 
 #Preview {
+    @Previewable @Namespace var namespace
     List {
-        CountryRowView(country: .mock)
-        CountryRowView(country: Country.mockList[1])
-        CountryRowView(country: Country.mockList[2])
+        CountryRowView(country: .mock, transitionNamespace: namespace)
+        CountryRowView(country: Country.mockList[1], transitionNamespace: namespace)
+        CountryRowView(country: Country.mockList[2], transitionNamespace: namespace)
     }
 }
